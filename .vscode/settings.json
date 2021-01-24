@@ -3,9 +3,7 @@
     "**/.git": true,
     "**/.DS_Store": true,
     "**/node_modules": true,
-    "pnpm-lock.yaml": true,
-    "server.key": true,
-    "server.cert": true
+    "pnpm-lock.yaml": true
   },
   "search.exclude": {
     "**/public": true

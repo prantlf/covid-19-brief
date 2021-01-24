@@ -36,9 +36,6 @@ async function startNegotiator () {
 
 function startServer () {
   sirv('public', {
-    http2: true,
-    key: 'server.key',
-    cert: 'server.cert',
     maxAge: 2 * day,
     single: true,
     brotli: true,
@@ -56,7 +53,7 @@ if (LE_URL && LE_RESP) {
     if (!err) {
       setInterval(() => updateSite(), 3 * day * 1000)
       const { WEB_CONCURRENCY } = process.env
-      const forks = (WEB_CONCURRENCY && +WEB_CONCURRENCY) || 2
+      const forks = (WEB_CONCURRENCY && +WEB_CONCURRENCY) || 1
       for (let i = 0; i < forks; ++i) cluster.fork()
       cluster.on('exit', worker =>
         console.log(`worker ${worker.process.pid} ended`))

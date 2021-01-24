@@ -26,8 +26,7 @@
     "node": ">=14"
   },
   "scripts": {
-    "test": "eslint *.js internal/*.js",
-    "cert": "openssl req -nodes -newkey rsa:4096 -sha256 -x509 -days 365 -subj /CN=localhost -keyout server.key -out server.cert"
+    "test": "eslint *.js internal/*.js"
   },
   "dependencies": {
     "canvas": "~2.6.1",
