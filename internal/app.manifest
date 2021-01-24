@@ -1,0 +1,32 @@
+{
+  "short_name": "Covid-19 Trends",
+  "name": "Covid-19 Brief Trends",
+  "description": "Briefly compares trends of active cases and new deaths connected to Covid-19 per week and country.",
+  "categories": ["health", "medical"],
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots" : [
+    {
+      "src": "example.png",
+      "sizes": "730x359",
+      "type": "image/png"
+    }
+  ]
+}
