@@ -285,9 +285,8 @@ async function updateSite (force) {
     }
   } catch (err) {
     console.error(err)
+    return err
   }
 }
 
-const generated = updateSite(true)
-
-module.exports = { updateSite, generated }
+module.exports = updateSite
