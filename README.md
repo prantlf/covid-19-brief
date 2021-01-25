@@ -1,5 +1,6 @@
 # Covid-19 Brief Trends
 
+[![Build Status](https://github.com/prantlf/covid-19-brief/workflows/Test/badge.svg)](https://github.com/prantlf/covid-19-brief/actions)
 [![Dependency Status](https://david-dm.org/prantlf/covid-19-brief.svg)](https://david-dm.org/prantlf/covid-19-brief)
 [![devDependency Status](https://david-dm.org/prantlf/covid-19-brief/dev-status.svg)](https://david-dm.org/prantlf/covid-19-brief#info=devDependencies)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
