@@ -6,7 +6,7 @@ const { version } = require('../package.json')
 const day = 24 * 60 * 60 * 1000
 const root = 'public'
 const units = ['abs', 'rel']
-const types = ['cases', 'deaths']
+const types = ['cases', 'deaths', 'hosp', 'icu']
 
 function ensureDirectory (name) {
   const dir = (name && `${root}/${name}`) || root
@@ -41,25 +41,29 @@ async function downloadText (url) {
 }
 
 async function getAllData () {
-  const name = 'data.json'
-  let data, updated
+  const allName = 'data.json'
+  const hospName = 'hosp.json'
+  let data, hosp, updated
   try {
-    const { mtime } = await statFile(name)
+    const { mtime } = await statFile(allName)
     const modified = new Date(mtime).getTime()
     if (new Date() > new Date(modified + 2 * day)) throw new Error()
-    data = await readText(name)
+    data = await readText(allName)
+    hosp = await readText(hospName)
   } catch {
     data = await downloadText('https://opendata.ecdc.europa.eu/covid19/casedistribution/json')
+    hosp = await downloadText('https://opendata.ecdc.europa.eu/covid19/hospitalicuadmissionrates/json/')
     await ensureDirectory()
-    await writeData(name, data)
+    await writeData(allName, data)
+    await writeData(hospName, hosp)
     updated = true
   }
-  data = JSON.parse(data).records
-  return { data, updated }
+  return { data: JSON.parse(data).records, hosp: JSON.parse(hosp), updated }
 }
 
-function prepareData (allData) {
+function prepareData (allData, hospData) {
   console.log(`processing ${allData.length} entries`)
+  const countryMap = new Map()
   const weeks = extractWeeks()
   const data = extractStatistics()
   const max = computeMax()
@@ -68,41 +72,6 @@ function prepareData (allData) {
     .reduce((sum, continent) => (sum += Object.keys(data[continent]).length), 0)
   console.log(`prepared ${countries} countries with ${weeks.length} weeks`)
   return { weeks, data, max }
-
-  // {
-  //   Europe: {
-  //     Czechia: {
-  //       abs: { cases: [...], deaths: [...] },
-  //       rel: { cases: [...], deaths: [...] }
-  //     },
-  //     ...
-  //   },
-  //   ...
-  // }
-  function extractStatistics () {
-    return allData
-      .filter(({ continentExp }) => continentExp !== 'Other')
-      .sort(({ year_week: left }, { year_week: right }) =>
-        left < right ? -1 : left > right ? 1 : 0)
-      .reduce((prepData, entry) => {
-        const {
-          countriesAndTerritories: country, continentExp, cases_weekly,
-          deaths_weekly, popData2019
-        } = entry
-        const continentData = prepData[continentExp] || (prepData[continentExp] = {})
-        const countryData = continentData[country] || (continentData[country] =
-          { abs: { cases: [], deaths: [] }, rel: { cases: [], deaths: [] } })
-        const { abs, rel } = countryData
-        const people = popData2019 || 1
-        abs.cases.push(cases_weekly)
-        abs.deaths.push(deaths_weekly)
-        rel.cases.push(makeRelative(cases_weekly))
-        rel.deaths.push(makeRelative(deaths_weekly))
-        return prepData
-
-        function makeRelative (value) { return (value * 1000 / people).toFixed(3) }
-      }, {})
-  }
 
   // ['2020-01', ...]
   function extractWeeks () {
@@ -115,8 +84,83 @@ function prepareData (allData) {
   // {
   //   Europe: {
   //     Czechia: {
-  //       abs: { cases: [max, last], deaths: [max, last] },
-  //       rel: { cases: [max, last], deaths: [max, last] }
+  //       abs: { cases: [...], deaths: [...], hosp: [...], icu: [...] },
+  //       rel: { cases: [...], deaths: [...], hosp: [...], icu: [...] }
+  //     },
+  //     ...
+  //   },
+  //   ...
+  // }
+  function extractStatistics () {
+    const prepData = allData
+      .filter(({ continentExp }) => continentExp !== 'Other')
+      .sort(byWeekAscending)
+      .reduce((prepData, {
+        countriesAndTerritories: country, continentExp: continent,
+        cases_weekly: cases, deaths_weekly: deaths, popData2019
+      }) => {
+        const continentData = prepData[continent] || (prepData[continent] = {})
+        const people = popData2019 || 1
+        const countryData = continentData[country] || (continentData[country] =
+          {
+            abs: { cases: [], deaths: [] },
+            rel: { cases: [], deaths: [] },
+            people
+          })
+        if (!countryMap.has(country)) countryMap.set(country, countryData)
+        const { abs, rel } = countryData
+        abs.cases.push(cases)
+        abs.deaths.push(deaths)
+        rel.cases.push(makeRelative(cases, people))
+        rel.deaths.push(makeRelative(deaths, people))
+        return prepData
+      }, {})
+
+    const types = {
+      'Daily hospital occupancy': 'hosp',
+      'Daily ICU occupancy': 'icu'
+    }
+    hospData
+      .filter(({ indicator }) => indicator in types)
+      .sort(byWeekAscending)
+      .forEach(({ country, indicator, year_week: week, value }) => {
+        const countryData = countryMap.get(country)
+        if (!countryData) throw new Error(`Unknown country ${country}`)
+        const index = weeks.indexOf(week.replace('W', ''))
+        if (index < 0) throw new Error(`Unknown week ${week}`)
+        const { abs, rel, people } = countryData
+        const type = types[indicator]
+        ensureValues(abs, type)[index] = value
+        ensureValues(rel, type)[index] = makeRelative(value, people)
+      })
+
+    return prepData
+
+    function byWeekAscending ({ year_week: left }, { year_week: right }) {
+      return left < right ? -1 : left > right ? 1 : 0
+    }
+
+    function makeRelative (value, people) {
+      return (value * 1000 / people).toFixed(3)
+    }
+
+    function ensureValues (source, type) {
+      let values = source[type]
+      if (!values) {
+        values = source[type] = new Array(source.cases.length)
+        values.fill(0)
+      }
+      return values
+    }
+  }
+
+  // {
+  //   Europe: {
+  //     Czechia: {
+  //       abs: { cases: [max, last], deaths: [max, last],
+  //              hosp: [max, last], icu: [max, last] },
+  //       rel: { cases: [max, last], deaths: [max, last],
+  //              hosp: [max, last], icu: [max, last] }
   //     },
   //     ...
   //   },
@@ -137,10 +181,12 @@ function prepareData (allData) {
           const unitData = countryData[unit]
           for (const type of types) {
             const typeData = unitData[type]
-            unitMax[type] = [
-              Math.max.apply(null, typeData) || 0,
-              typeData[typeData.length - 1]
-            ]
+            if (typeData) {
+              unitMax[type] = [
+                Math.max.apply(null, typeData) || 0,
+                typeData[typeData.length - 1] || 0
+              ]
+            }
           }
         }
       }
@@ -149,7 +195,13 @@ function prepareData (allData) {
   }
 }
 
+const colors = {
+  cases: '#1f77b4', deaths: '#8c564b', hosp: '#ff7f0e', icu: '#d62728'
+}
+
 function prepareGraph (data, country, weeks, type, unit) {
+  const values = data[country][unit][type]
+  if (!values) return
   // console.log(`preparing graph of ${unit} ${type} for ${country}`)
   return {
     $schema: 'https://vega.github.io/schema/vega/v3.0.json',
@@ -157,7 +209,7 @@ function prepareGraph (data, country, weeks, type, unit) {
     height: 100,
     data: {
       name: 'table',
-      values: data[country][unit][type].map((value, index) =>
+      values: values.map((value, index) =>
         ({ week: weeks[index], value }))
     },
     scales: [
@@ -180,7 +232,8 @@ function prepareGraph (data, country, weeks, type, unit) {
         encode: {
           enter: {
             x: { scale: 'week', field: 'week' },
-            y: { scale: 'value', field: 'value' }
+            y: { scale: 'value', field: 'value' },
+            stroke: { value: colors[type] }
           }
         }
       }
@@ -207,8 +260,10 @@ async function updateImages ({ weeks, data }) {
         const countries = Object.keys(continentData)
         await Promise.all(countries.map(async country => {
           const graph = prepareGraph(continentData, country, weeks, type, unit)
+          if (!graph) return
           const image = await renderGraph(graph)
-          await writeData(`images/${unit}/${type}/${continent}/${country}.png`, image)
+          const file = country.replace(/[, ]/g, '_').replace(/_+/g, '_')
+          await writeData(`images/${unit}/${type}/${continent}/${file}.png`, image)
         }))
       }
     }
@@ -274,9 +329,9 @@ function compressIndex () {
 
 async function updateSite (force) {
   try {
-    const { data: allData, updated } = await getAllData()
+    const { data: allData, hosp: hospData, updated } = await getAllData()
     if (updated || force) {
-      const prepData = prepareData(allData)
+      const prepData = prepareData(allData, hospData)
       await Promise.all([
         updateImages(prepData), updateIndex(prepData),
         copyFile('app.manifest'), copyFile('logo192.png'),

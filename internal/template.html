@@ -50,6 +50,8 @@
       display: inline-block;
       position: relative;
       margin: 8px;
+      width: 100px;
+      height: 100px;
     }
     figcaption {
       position: absolute;
@@ -65,9 +67,11 @@
     <h1>Covid-19 Brief Trends</h1>
   </header>
   <main>
-    <p><select id=type aria-label="cases or deaths">
+    <p><select id=type aria-label="cases, deaths, hospital or ICU occupancy">
       <option value=cases>Active cases</option>
       <option value=deaths>New deaths</option>
+      <option value=hosp>Hospital occupancy</option>
+      <option value=icu>ICU beds occupancy</option>
     </select> in <select id=continent aria-label=continent></select> per week from January 2020
     <select id=unit aria-label="relative or absolute">
       <option value=rel>relatively to citizens (&permil;)</option>
@@ -166,9 +170,9 @@
       return new Promise(resolve => setTimeout(resolve, 300))
     }
 
-    function waitForImage (image) {
+    async function waitForImage (image) {
       const img = image.getElementsByTagName('img')[0]
-      return new Promise((resolve, reject) => {
+      return img && new Promise((resolve, reject) => {
         img.addEventListener('load', resolve)
         img.addEventListener('error', reject)
       })
@@ -176,11 +180,19 @@
 
     function createImage (continent, country, type, unit) {
       const image = document.createElement('figure')
-      const [maxVal, lastVal] = max[continent][country][unit][type]
       const countryName = country.replace(/_/g, ' ')
-      image.innerHTML =
-    `<img src=images/${unit}/${type}/${continent}/${country}.png alt="${countryName}: ${maxVal}, ${lastVal}">
-    <figcaption><span class=country>${countryName}</span><br>${maxVal}<br>${lastVal}</figcaption>`
+      const [maxVal, lastVal] = max[continent][country][unit][type] || []
+      let html
+      if (maxVal) {
+        const countryFile = country.replace(/[, ]/g, '_').replace(/_+/g, '_')
+        html =
+`<img src=images/${unit}/${type}/${continent}/${countryFile}.png alt="${countryName}: ${maxVal}, ${lastVal}">
+<figcaption><span class=country>${countryName}</span><br>${maxVal}<br>${lastVal}</figcaption>`
+      } else {
+        html =
+`<figcaption><span class=country>${countryName}</span><br>no data</figcaption>`
+      }
+      image.innerHTML = html
       return image
     }
   </script>
