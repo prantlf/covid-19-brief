@@ -1,0 +1,14 @@
+.dockerignore
+.editorconfig
+.eslintrc.yml
+.git
+.github
+.gitignore
+.hadolint.yaml
+.vscode
+CHANGES.md
+LICENSE
+Makefile
+README.md
+node_modules
+public
