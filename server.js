@@ -37,6 +37,7 @@ async function startNegotiator () {
 function startServer () {
   sirv('public', {
     maxAge: 2 * day,
+    m: 2 * day, // workaround for a bug in sirv
     single: true,
     brotli: true,
     zlib: true,
@@ -45,14 +46,24 @@ function startServer () {
   })
 }
 
+const { WEB_CONCURRENCY, NOCLUSTER } = process.env
 if (LE_URL && LE_RESP) {
   startNegotiator()
+} else if (NOCLUSTER) {
+  console.log(`running single ${process.pid}`)
+  updateSite(true).then(err => {
+    if (!err) {
+      startServer()
+      setInterval(() => updateSite(), 3 * day * 1000)
+    } else {
+      process.exitCode = 1
+    }
+  })
 } else if (cluster.isMaster) {
   console.log(`running master ${process.pid}`)
   updateSite(true).then(err => {
     if (!err) {
       setInterval(() => updateSite(), 3 * day * 1000)
-      const { WEB_CONCURRENCY } = process.env
       const forks = (WEB_CONCURRENCY && +WEB_CONCURRENCY) || 1
       for (let i = 0; i < forks; ++i) cluster.fork()
       cluster.on('exit', worker =>

@@ -1,6 +1,6 @@
 {
   "name": "covid-19-brief",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Briefly compares trends of active cases and new deaths connected to Covid-19 per week and country.",
   "homepage": "https://github.com/prantlf/covid-19-brief#readme",
   "author": {

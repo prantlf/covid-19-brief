@@ -1,5 +1,9 @@
 # Changes
 
+## 1.1.1
+
+* Workaround for a bug in sirv cache support.
+
 ## 1.1.0
 
 * Show "no data" if there are only zeros available for a country.
