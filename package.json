@@ -1,7 +1,7 @@
 {
   "name": "covid-19-brief",
   "version": "1.1.1",
-  "description": "Briefly compares trends of active cases and new deaths connected to Covid-19 per week and country.",
+  "description": "Briefly compares trends of active cases, new deaths and hospital occupancy connected to Covid-19 per week and country.",
   "homepage": "https://github.com/prantlf/covid-19-brief#readme",
   "author": {
     "name": "Ferdinand Prantl",
@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "canvas": "~2.6.1",
-    "get-port": "^5.1.1",
     "node-fetch": "~2.6.1",
     "sirv-cli": "^1.0.10",
     "vega": "~5.19.1"

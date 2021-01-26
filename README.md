@@ -7,7 +7,7 @@
 
 [![prantlf/covid-19-brief](http://dockeri.co/image/prantlf/covid-19-brief)](https://hub.docker.com/repository/docker/prantlf/covid-19-brief/)
 
-Briefly compares trends of active cases and new deaths connected to Covid-19 per week and country. Offers a rough overview of the virus momentum. Uses data from [ECDC]. See the current state [on-line].
+Briefly compares trends of active cases, new deaths and hospital occupancy connected to Covid-19 per week and country. Offers a rough overview of the virus momentum. Uses data from [ECDC]. See the current state [on-line].
 
 ![Example](./internal/example.png)
 
