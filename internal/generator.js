@@ -51,14 +51,14 @@ async function getAllData () {
     data = await readText(allName)
     hosp = await readText(hospName)
   } catch {
-    data = await downloadText('https://opendata.ecdc.europa.eu/covid19/casedistribution/json')
+    data = await downloadText('https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/json/')
     hosp = await downloadText('https://opendata.ecdc.europa.eu/covid19/hospitalicuadmissionrates/json/')
     await ensureDirectory()
     await writeData(allName, data)
     await writeData(hospName, hosp)
     updated = true
   }
-  return { data: JSON.parse(data).records, hosp: JSON.parse(hosp), updated }
+  return { data: JSON.parse(data), hosp: JSON.parse(hosp), updated }
 }
 
 function prepareData (allData, hospData) {
@@ -75,10 +75,17 @@ function prepareData (allData, hospData) {
   console.log(`prepared ${countries} countries with ${weeks.length} weeks`)
   return { weeks, data, max }
 
+  // convert to the original schema of the data from
+  // either case distribution or national cases deaths
+  function aggregateData () {
+    if (allData[0].cases_weekly) return allData
+    if (allData[0].countriesAndTerritories) return convertFromCaseDistribution()
+    return convertFromNationalCasesDeaths()
+  }
+
   // convert to the original schema of the data
   // { day, month, year, cases, deaths, ... } => { year_week, cases_weekly, deaths_weekly, ... }
-  function aggregateData () {
-    if (allData[0].year_week) return allData
+  function convertFromCaseDistribution () {
     const aggregatedMap = new Map()
     for (const entry of allData) {
       const { countriesAndTerritories, continentExp, popData2019, cases, deaths } = entry
@@ -114,6 +121,33 @@ function prepareData (allData, hospData) {
       const weekNum = Math.ceil((date.getDay() + dayCount + 1) / 7)
       return `${year}-${pad(weekNum)}`
     }
+  }
+
+  // convert to the original schema of the data
+  // { country, continent, population, indicator, weekly_count, ... } =>
+  //   { countriesAndTerritories, continentExp, popData2019, cases_weekly, deaths_weekly, ... }
+  function convertFromNationalCasesDeaths () {
+    const aggregatedMap = new Map()
+    for (const { country, continent, population, indicator, weekly_count, year_week } of allData) {
+      const key = `${country}:${year_week}`
+      let aggregatedEntry = aggregatedMap.get(key)
+      if (!aggregatedEntry) {
+        aggregatedEntry = {
+          countriesAndTerritories: country,
+          continentExp: continent,
+          popData2019: population,
+          year_week
+        }
+        aggregatedMap.set(key, aggregatedEntry)
+      }
+      if (!aggregatedEntry.popData2019) aggregatedEntry.popData2019 = population
+      if (indicator !== 'cases' && indicator !== 'deaths') {
+        throw new Error(`unknown indicator "${indicator}"`)
+      }
+      aggregatedEntry[`${indicator}_weekly`] = weekly_count
+    }
+    console.log(`aggregated ${aggregatedMap.size} entries`)
+    return Array.from(aggregatedMap.values())
   }
 
   // ['2020-01', ...]
@@ -170,7 +204,7 @@ function prepareData (allData, hospData) {
       .forEach(({ country, indicator, year_week: week, value }) => {
         const countryData = countryMap.get(country)
         if (!countryData) {
-          console.log(`Known countries: ${countryMap.keys()}`)
+          console.log(`Known countries: ${Array.from(countryMap.keys())}`)
           throw new Error(`Unknown country ${country}`)
         }
         const index = weeks.indexOf(week.replace('W', ''))
@@ -310,7 +344,7 @@ async function updateImages ({ weeks, data }) {
           const graph = prepareGraph(continentData, country, weeks, type, unit)
           if (!graph) return
           const image = await renderGraph(graph)
-          const file = country.replace(/[, ]/g, '_').replace(/_+/g, '_')
+          const file = country.replace(/[ ,/]/g, '_').replace(/_+/g, '_')
           await writeData(`images/${unit}/${type}/${continent}/${file}.png`, image)
         }))
       }

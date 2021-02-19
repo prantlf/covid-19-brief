@@ -79,10 +79,7 @@
     </select>.
     Numbers below country names are maximum and latest values.
     The last week is <span id=last-week></span>.
-    Today is <span id=today></span>.
-    **NOTICE**: <a href=https://www.ecdc.europa.eu>ECDC</a> changed the data format and removed
-    data for the whole year 2021 without any public announcement.
-    </p>
+    Today is <span id=today></span>.</p>
     <div id=images class=hidden></div>
   </main>
   <hr>
@@ -187,7 +184,7 @@
       const [maxVal, lastVal] = max[continent][country][unit][type] || []
       let html
       if (maxVal) {
-        const countryFile = country.replace(/[, ]/g, '_').replace(/_+/g, '_')
+        const countryFile = country.replace(/[ ,/]/g, '_').replace(/_+/g, '_')
         html =
 `<img src=images/${unit}/${type}/${continent}/${countryFile}.png alt="${countryName}: ${maxVal}, ${lastVal}">
 <figcaption><span class=country>${countryName}</span><br>${maxVal}<br>${lastVal}</figcaption>`

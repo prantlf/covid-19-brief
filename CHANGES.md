@@ -1,6 +1,10 @@
 # Changes
 
-## 1.1.2.
+## 1.1.3
+
+* Change the source file to another one, which contains almost the same information as the original one did the last week. Changes in the original file made it so big that it needs more than two minutes to download.
+
+## 1.1.2
 
 * Adapted for the change of data schema done by ECDC without notice. 
   They removed the data for the whole year 2021 too.
