@@ -1,5 +1,10 @@
 # Changes
 
+## 1.1.2.
+
+* Adapted for the change of data schema done by ECDC without notice. 
+  They removed the data for the whole year 2021 too.
+
 ## 1.1.1
 
 * Workaround for a bug in sirv cache support.

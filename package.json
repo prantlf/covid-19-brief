@@ -31,15 +31,15 @@
   "dependencies": {
     "canvas": "~2.6.1",
     "node-fetch": "~2.6.1",
-    "sirv-cli": "^1.0.10",
+    "sirv-cli": "~1.0.11",
     "vega": "~5.19.1"
   },
   "devDependencies": {
-    "eslint": "~7.18.0",
+    "eslint": "~7.20.0",
     "eslint-config-standard": "~16.0.2",
     "eslint-plugin-import": "~2.22.1",
     "eslint-plugin-node": "~11.1.0",
-    "eslint-plugin-promise": "~4.2.1",
+    "eslint-plugin-promise": "~4.3.1",
     "eslint-plugin-standard": "~4.1.0"
   },
   "keywords": [

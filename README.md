@@ -9,6 +9,8 @@
 
 Briefly compares trends of active cases, new deaths and hospital occupancy connected to Covid-19 per week and country. Offers a rough overview of the virus momentum. Uses data from [ECDC]. See the current state [on-line].
 
+**NOTICE**: ECDC changed the data format from weekly stats to daily stats for the year 2020 and removed data for the whole year 2021 without any public announcement.
+
 ![Example](./internal/example.png)
 
 ## Run

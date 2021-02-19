@@ -1,15 +1,15 @@
 dependencies:
   canvas: 2.6.1
   node-fetch: 2.6.1
-  sirv-cli: 1.0.10
+  sirv-cli: 1.0.11
   vega: 5.19.1
 devDependencies:
-  eslint: 7.18.0
-  eslint-config-standard: 16.0.2_bc7233cd27d62fa910eb0fe2cb1811bb
-  eslint-plugin-import: 2.22.1_eslint@7.18.0
-  eslint-plugin-node: 11.1.0_eslint@7.18.0
-  eslint-plugin-promise: 4.2.1
-  eslint-plugin-standard: 4.1.0_eslint@7.18.0
+  eslint: 7.20.0
+  eslint-config-standard: 16.0.2_b9128b9dfce9b0a9c071f37ef4a8d1e9
+  eslint-plugin-import: 2.22.1_eslint@7.20.0
+  eslint-plugin-node: 11.1.0_eslint@7.20.0
+  eslint-plugin-promise: 4.3.1
+  eslint-plugin-standard: 4.1.0_eslint@7.20.0
 lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.12.11:
@@ -17,11 +17,13 @@ packages:
       '@babel/highlight': 7.10.4
     dev: true
     resolution:
-      integrity: sha512-Zt1yodBx1UcyiePMSkWnU4hPqhwq7hGi2nFL1LeA3EUl+q2LQx16MISgJ0+z7dnmgvP9QtIleuETGOiOH1RcIw==
+      integrity: sha1-9K1DWqJj25NbjxDyxVLSP7cWpj8=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/@babel/code-frame/-/code-frame-7.12.11.tgz
   /@babel/helper-validator-identifier/7.12.11:
     dev: true
     resolution:
-      integrity: sha512-np/lG3uARFybkoHokJUmf1QfEvRVCPbmQeUQpKow5cQ3xWrV9i3rUHodKDJPQfTVX61qKi+UdYk8kik84n7XOw==
+      integrity: sha1-yaHwIZF9y1zPDU5FPjmQIpgfye0=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/@babel/helper-validator-identifier/-/helper-validator-identifier-7.12.11.tgz
   /@babel/highlight/7.10.4:
     dependencies:
       '@babel/helper-validator-identifier': 7.12.11
@@ -29,7 +31,8 @@ packages:
       js-tokens: 4.0.0
     dev: true
     resolution:
-      integrity: sha512-i6rgnR/YgPEQzZZnbTHHuZdlE8qyoBNalD6F+q4vAFlcMEcqmkoG+mPqJYJCo63qPf74+Y1UZsl3l6f7/RIkmA==
+      integrity: sha1-fRvf1ldTU4+r5sOFls23bZrGAUM=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/@babel/highlight/-/highlight-7.10.4.tgz
   /@eslint/eslintrc/0.3.0:
     dependencies:
       ajv: 6.12.6
@@ -46,11 +49,13 @@ packages:
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-1JTKgrOKAHVivSvOYw+sJOunkBjUOvjqWk1DPja7ZFhIS2mX/4EgTT8M7eTK9jrKhL/FvXXEbQwIs3pg1xp3dg==
+      integrity: sha1-1zbWlj1wA7ZRTmMkvsnGAqw0Axg=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/@eslint/eslintrc/-/eslintrc-0.3.0.tgz
   /@polka/url/1.0.0-next.11:
     dev: false
     resolution:
-      integrity: sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
+      integrity: sha1-rrFvUGSaka952+NldLZtD55Nn3E=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/@polka/url/-/url-1.0.0-next.11.tgz
   /@types/json5/0.0.29:
     dev: true
     resolution:
@@ -66,14 +71,16 @@ packages:
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     resolution:
-      integrity: sha512-K0Ptm/47OKfQRpNQ2J/oIN/3QYiK6FwW+eJbILhsdxh2WTLdl+30o8aGdTbm5JbffpFFAg/g+zi1E+jvJha5ng==
+      integrity: sha1-/IZh4Rt6wVOcR9v+oucrOvNNJns=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/acorn-jsx/-/acorn-jsx-5.3.1.tgz
   /acorn/7.4.1:
     dev: true
     engines:
       node: '>=0.4.0'
     hasBin: true
     resolution:
-      integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
+      integrity: sha1-/q7SVZc9LndVW4PbwIhRpsY1IPo=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/acorn/-/acorn-7.4.1.tgz
   /ajv/6.12.6:
     dependencies:
       fast-deep-equal: 3.1.3
@@ -82,7 +89,8 @@ packages:
       uri-js: 4.4.1
     dev: true
     resolution:
-      integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
+      integrity: sha1-uvWmLoArB9l3A0WG+MO69a3ybfQ=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/ajv/-/ajv-6.12.6.tgz
   /ajv/7.0.3:
     dependencies:
       fast-deep-equal: 3.1.3
@@ -91,13 +99,15 @@ packages:
       uri-js: 4.4.1
     dev: true
     resolution:
-      integrity: sha512-R50QRlXSxqXcQP5SvKUrw8VZeypvo12i2IX0EeR5PiZ7bEKeHWgzgo264LDadUsCU42lTJVhFikTqJwNeH34gQ==
+      integrity: sha1-E650fv8SXK+yMKxQSyQGzzce7OI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/ajv/-/ajv-7.0.3.tgz
   /ansi-colors/4.1.1:
     dev: true
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==
+      integrity: sha1-y7muJWv3UK8eqzRPIpqif+lLo0g=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/ansi-colors/-/ansi-colors-4.1.1.tgz
   /ansi-regex/2.1.1:
     dev: false
     engines:
@@ -109,7 +119,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-bY6fj56OUQ0hU1KjFNDQuJFezqKdrAyFdIevADiqrWHwSlbmBNMHp5ak2f40Pm8JTFyM2mqxkG6ngkHO11f/lg==
+      integrity: sha1-OIU59VF5vzkznIGvMKZU1p+Hy3U=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/ansi-regex/-/ansi-regex-5.0.0.tgz
   /ansi-styles/3.2.1:
     dependencies:
       color-convert: 1.9.3
@@ -117,7 +128,8 @@ packages:
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==
+      integrity: sha1-QfuyAkPlCxK+DwS43tvwdSDOhB0=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/ansi-styles/-/ansi-styles-3.2.1.tgz
   /ansi-styles/4.3.0:
     dependencies:
       color-convert: 2.0.1
@@ -125,7 +137,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
+      integrity: sha1-7dgDYornHATIWuegkG7a00tkiTc=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/ansi-styles/-/ansi-styles-4.3.0.tgz
   /aproba/1.2.0:
     dev: false
     resolution:
@@ -142,7 +155,8 @@ packages:
       sprintf-js: 1.0.3
     dev: true
     resolution:
-      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
+      integrity: sha1-vNZ5HqWuCXJeF+WtmIE0zUCz2RE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/argparse/-/argparse-1.0.10.tgz
   /array-includes/3.1.2:
     dependencies:
       call-bind: 1.0.2
@@ -170,7 +184,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
+      integrity: sha1-SDFDxWeu7UeFdZwIZXhtx319LjE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/astral-regex/-/astral-regex-2.0.0.tgz
   /balanced-match/1.0.0:
     resolution:
       integrity: sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
@@ -192,7 +207,8 @@ packages:
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
+      integrity: sha1-s2MKvYlDQy9Us/BRkjjjPNffL3M=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/callsites/-/callsites-3.1.0.tgz
   /canvas/2.6.1:
     dependencies:
       nan: 2.14.2
@@ -213,7 +229,8 @@ packages:
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
+      integrity: sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/chalk/-/chalk-2.4.2.tgz
   /chalk/4.1.0:
     dependencies:
       ansi-styles: 4.3.0
@@ -222,7 +239,8 @@ packages:
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
+      integrity: sha1-ThSHCmGNni7dl92DRf2dncMVZGo=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/chalk/-/chalk-4.1.0.tgz
   /chownr/1.1.4:
     dev: false
     resolution:
@@ -238,7 +256,8 @@ packages:
       color-name: 1.1.3
     dev: true
     resolution:
-      integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==
+      integrity: sha1-u3GFBpDh8TZWfeYp0tVHHe2kweg=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/color-convert/-/color-convert-1.9.3.tgz
   /color-convert/2.0.1:
     dependencies:
       color-name: 1.1.4
@@ -246,15 +265,18 @@ packages:
     engines:
       node: '>=7.0.0'
     resolution:
-      integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==
+      integrity: sha1-ctOmjVmMm9s68q0ehPIdiWq9TeM=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/color-convert/-/color-convert-2.0.1.tgz
   /color-name/1.1.3:
     dev: true
     resolution:
       integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/color-name/-/color-name-1.1.3.tgz
   /color-name/1.1.4:
     dev: true
     resolution:
-      integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
+      integrity: sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/color-name/-/color-name-1.1.4.tgz
   /commander/2.20.3:
     dev: false
     resolution:
@@ -267,7 +289,8 @@ packages:
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-pMD+MVR538ipqkG5JXeOEbKWS5um1H4LUUccUQG68qpeqBYbzYy79Gh55jkd2TtPdRfUaLWdv6LPP//5Zt0aPQ==
+      integrity: sha1-mV4gy/vxTdeStnLN44e9Eo1nS/c=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/console-clear/-/console-clear-1.1.1.tgz
   /console-control-strings/1.1.0:
     dev: false
     resolution:
@@ -291,7 +314,8 @@ packages:
     engines:
       node: '>= 8'
     resolution:
-      integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
+      integrity: sha1-9zqFudXUHQRVUcF34ogtSshXKKY=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/cross-spawn/-/cross-spawn-7.0.3.tgz
   /d3-array/2.10.0:
     dependencies:
       internmap: 1.0.0
@@ -421,7 +445,8 @@ packages:
       supports-color:
         optional: true
     resolution:
-      integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
+      integrity: sha1-8NIpxQXgxtjEmsVT0bE9wYP2su4=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/debug/-/debug-4.3.1.tgz
   /decompress-response/4.2.1:
     dependencies:
       mimic-response: 2.1.0
@@ -440,6 +465,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/deep-is/-/deep-is-0.1.3.tgz
   /define-properties/1.1.3:
     dependencies:
       object-keys: 1.1.1
@@ -479,11 +505,13 @@ packages:
     engines:
       node: '>=6.0.0'
     resolution:
-      integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
+      integrity: sha1-rd6+rXKmV023g2OdyHoSF3OXOWE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/doctrine/-/doctrine-3.0.0.tgz
   /emoji-regex/8.0.0:
     dev: true
     resolution:
-      integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
+      integrity: sha1-6Bj9ac5cz8tARZT4QpY79TFkzDc=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/emoji-regex/-/emoji-regex-8.0.0.tgz
   /enquirer/2.3.6:
     dependencies:
       ansi-colors: 4.1.1
@@ -491,7 +519,8 @@ packages:
     engines:
       node: '>=8.6'
     resolution:
-      integrity: sha512-yjNnPr315/FjS4zIsUxYguYUPP2e1NK4d7E7ZOLiyYCcbFBiTMyID+2wvm2w6+pZ/odMA7cRkjhsPbltwBOrLg==
+      integrity: sha1-Kn/l3WNKHkElqXXsmU/1RW3Dc00=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/enquirer/-/enquirer-2.3.6.tgz
   /error-ex/1.3.2:
     dependencies:
       is-arrayish: 0.2.1
@@ -535,12 +564,13 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-  /eslint-config-standard/16.0.2_bc7233cd27d62fa910eb0fe2cb1811bb:
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz
+  /eslint-config-standard/16.0.2_b9128b9dfce9b0a9c071f37ef4a8d1e9:
     dependencies:
-      eslint: 7.18.0
-      eslint-plugin-import: 2.22.1_eslint@7.18.0
-      eslint-plugin-node: 11.1.0_eslint@7.18.0
-      eslint-plugin-promise: 4.2.1
+      eslint: 7.20.0
+      eslint-plugin-import: 2.22.1_eslint@7.20.0
+      eslint-plugin-node: 11.1.0_eslint@7.20.0
+      eslint-plugin-promise: 4.3.1
     dev: true
     peerDependencies:
       eslint: ^7.12.1
@@ -565,9 +595,9 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-6j9xxegbqe8/kZY8cYpcp0xhbK0EgJlg3g9mib3/miLaExuuwc3n5UEfSnU6hWMbT0FAYVvDbL9RrRgpUeQIvA==
-  /eslint-plugin-es/3.0.1_eslint@7.18.0:
+  /eslint-plugin-es/3.0.1_eslint@7.20.0:
     dependencies:
-      eslint: 7.18.0
+      eslint: 7.20.0
       eslint-utils: 2.1.0
       regexpp: 3.1.0
     dev: true
@@ -577,14 +607,14 @@ packages:
       eslint: '>=4.19.1'
     resolution:
       integrity: sha512-GUmAsJaN4Fc7Gbtl8uOBlayo2DqhwWvEzykMHSCZHU3XdJ+NSzzZcVhXh3VxX5icqQ+oQdIEawXX8xkR3mIFmQ==
-  /eslint-plugin-import/2.22.1_eslint@7.18.0:
+  /eslint-plugin-import/2.22.1_eslint@7.20.0:
     dependencies:
       array-includes: 3.1.2
       array.prototype.flat: 1.2.4
       contains-path: 0.1.0
       debug: 2.6.9
       doctrine: 1.5.0
-      eslint: 7.18.0
+      eslint: 7.20.0
       eslint-import-resolver-node: 0.3.4
       eslint-module-utils: 2.6.0
       has: 1.0.3
@@ -600,10 +630,10 @@ packages:
       eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0
     resolution:
       integrity: sha512-8K7JjINHOpH64ozkAhpT3sd+FswIZTfMZTjdx052pnWrgRCVfp8op9tbjpAk3DdUeI/Ba4C8OjdC0r90erHEOw==
-  /eslint-plugin-node/11.1.0_eslint@7.18.0:
+  /eslint-plugin-node/11.1.0_eslint@7.20.0:
     dependencies:
-      eslint: 7.18.0
-      eslint-plugin-es: 3.0.1_eslint@7.18.0
+      eslint: 7.20.0
+      eslint-plugin-es: 3.0.1_eslint@7.20.0
       eslint-utils: 2.1.0
       ignore: 5.1.8
       minimatch: 3.0.4
@@ -616,15 +646,16 @@ packages:
       eslint: '>=5.16.0'
     resolution:
       integrity: sha512-oUwtPJ1W0SKD0Tr+wqu92c5xuCeQqB3hSCHasn/ZgjFdA9iDGNkNf2Zi9ztY7X+hNuMib23LNGRm6+uN+KLE3g==
-  /eslint-plugin-promise/4.2.1:
+  /eslint-plugin-promise/4.3.1:
     dev: true
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
-  /eslint-plugin-standard/4.1.0_eslint@7.18.0:
+      integrity: sha1-YUhd8qNZ4DFJ/a/AposOAwrSrEU=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/eslint-plugin-promise/-/eslint-plugin-promise-4.3.1.tgz
+  /eslint-plugin-standard/4.1.0_eslint@7.20.0:
     dependencies:
-      eslint: 7.18.0
+      eslint: 7.20.0
     dev: true
     peerDependencies:
       eslint: '>=5.0.0'
@@ -638,7 +669,8 @@ packages:
     engines:
       node: '>=8.0.0'
     resolution:
-      integrity: sha512-2NxwbF/hZ0KpepYN0cNbo+FN6XoK7GaHlQhgx/hIZl6Va0bF45RQOOwhLIy8lQDbuCiadSLCBnH2CFYquit5bw==
+      integrity: sha1-54blmmbLkrP2wfsNUIqrF0hI9Iw=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/eslint-scope/-/eslint-scope-5.1.1.tgz
   /eslint-utils/2.1.0:
     dependencies:
       eslint-visitor-keys: 1.3.0
@@ -658,8 +690,9 @@ packages:
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
-  /eslint/7.18.0:
+      integrity: sha1-If3I+82ceVzAMh8FY3AglXUVEag=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz
+  /eslint/7.20.0:
     dependencies:
       '@babel/code-frame': 7.12.11
       '@eslint/eslintrc': 0.3.0
@@ -673,7 +706,7 @@ packages:
       eslint-utils: 2.1.0
       eslint-visitor-keys: 2.0.0
       espree: 7.3.1
-      esquery: 1.3.1
+      esquery: 1.4.0
       esutils: 2.0.3
       file-entry-cache: 6.0.0
       functional-red-black-tree: 1.0.1
@@ -703,7 +736,8 @@ packages:
       node: ^10.12.0 || >=12.0.0
     hasBin: true
     resolution:
-      integrity: sha512-fbgTiE8BfUJZuBeq2Yi7J3RB3WGUQ9PNuNbmgi6jt9Iv8qrkxfy19Ds3OpL1Pm7zg3BtTVhvcUZbIRQ0wmSjAQ==
+      integrity: sha1-2wfEyk7aLiMW56pXrH/JHsVQvcc=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/eslint/-/eslint-7.20.0.tgz
   /espree/7.3.1:
     dependencies:
       acorn: 7.4.1
@@ -713,22 +747,25 @@ packages:
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-v3JCNCE64umkFpmkFGqzVKsOT0tN1Zr+ueqLZfpV1Ob8e+CEgPWa+OxCoGH3tnhimMKIaBm4m/vaRpJ/krRz2g==
+      integrity: sha1-8t8zC3Usb1UBn4vYm3ZgA5wbu7Y=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/espree/-/espree-7.3.1.tgz
   /esprima/4.0.1:
     dev: true
     engines:
       node: '>=4'
     hasBin: true
     resolution:
-      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-  /esquery/1.3.1:
+      integrity: sha1-E7BM2z5sXRnfkatph6hpVhmwqnE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/esprima/-/esprima-4.0.1.tgz
+  /esquery/1.4.0:
     dependencies:
       estraverse: 5.2.0
     dev: true
     engines:
       node: '>=0.10'
     resolution:
-      integrity: sha512-olpvt9QG0vniUBZspVRN6lwB7hOZoTRtT+jzR+tS4ffYx2mzbw+z0XCOk44aaLYKApNX5nMm+E+P6o25ip/DHQ==
+      integrity: sha1-IUj/w4uC6McFff7UhCWz5h8PJKU=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/esquery/-/esquery-1.4.0.tgz
   /esrecurse/4.3.0:
     dependencies:
       estraverse: 5.2.0
@@ -736,19 +773,22 @@ packages:
     engines:
       node: '>=4.0'
     resolution:
-      integrity: sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag==
+      integrity: sha1-eteWTWeauyi+5yzsY3WLHF0smSE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/esrecurse/-/esrecurse-4.3.0.tgz
   /estraverse/4.3.0:
     dev: true
     engines:
       node: '>=4.0'
     resolution:
-      integrity: sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw==
+      integrity: sha1-OYrT88WiSUi+dyXoPRGn3ijNvR0=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/estraverse/-/estraverse-4.3.0.tgz
   /estraverse/5.2.0:
     dev: true
     engines:
       node: '>=4.0'
     resolution:
-      integrity: sha512-BxbNGGNm0RyRYvUdHpIwv9IWzeM9XClbOxwoATuFdOE7ZE6wHL+HQ5T8hoPM+zHvmKzzsEqhgy0GrQ5X13afiQ==
+      integrity: sha1-MH30JUfmzHMk088DwVXVzbjFOIA=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/estraverse/-/estraverse-5.2.0.tgz
   /esutils/2.0.3:
     dev: true
     engines:
@@ -758,15 +798,18 @@ packages:
   /fast-deep-equal/3.1.3:
     dev: true
     resolution:
-      integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
+      integrity: sha1-On1WtVnWy8PrUSMlJE5hmmXGxSU=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz
   /fast-json-stable-stringify/2.1.0:
     dev: true
     resolution:
-      integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==
+      integrity: sha1-h0v2nG9ATCtdmcSBNBOZ/VWJJjM=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz
   /fast-levenshtein/2.0.6:
     dev: true
     resolution:
       integrity: sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz
   /file-entry-cache/6.0.0:
     dependencies:
       flat-cache: 3.0.4
@@ -774,7 +817,8 @@ packages:
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-fqoO76jZ3ZnYrXLDRxBR1YvOvc0k844kcOg40bgsPrE25LAb/PDqTY+ho64Xh2c8ZXgIKldchCFHczG2UVRcWA==
+      integrity: sha1-eSGonDkcbZPv7CFprGvzAMUn6go=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/file-entry-cache/-/file-entry-cache-6.0.0.tgz
   /find-up/2.1.0:
     dependencies:
       locate-path: 2.0.0
@@ -791,11 +835,13 @@ packages:
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==
+      integrity: sha1-YbAzgwKy/p+Vfcwy/CqH8cMEixE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/flat-cache/-/flat-cache-3.0.4.tgz
   /flatted/3.1.1:
     dev: true
     resolution:
-      integrity: sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
+      integrity: sha1-xLSJ6ACW2d8d/JfHmHGup8YXxGk=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/flatted/-/flatted-3.1.1.tgz
   /fs-minipass/1.2.7:
     dependencies:
       minipass: 2.9.0
@@ -812,6 +858,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz
   /gauge/2.7.4:
     dependencies:
       aproba: 1.2.0
@@ -839,6 +886,7 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-3Xzn3hh8Bsi/NTeWrHHgmfCYDrw=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/get-port/-/get-port-3.2.0.tgz
   /glob-parent/5.1.1:
     dependencies:
       is-glob: 4.0.1
@@ -846,7 +894,8 @@ packages:
     engines:
       node: '>= 6'
     resolution:
-      integrity: sha512-FnI+VGOpnlGHWZxthPGR+QhR78fuiK0sNLkHQv+bL9fQi57lNNdquIbna/WrfROrolq8GK5Ek6BiMwqL/voRYQ==
+      integrity: sha1-tsHvQXxOVmPqSY8cRa+saRa7wik=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/glob-parent/-/glob-parent-5.1.1.tgz
   /glob/7.1.6:
     dependencies:
       fs.realpath: 1.0.0
@@ -864,7 +913,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-BWICuzzDvDoH54NHKCseDanAhE3CeDorgDL5MT6LMXXj2WCnd9UC2szdk4AWLfjdgNBCXLUanXYcpBBKOSWGwg==
+      integrity: sha1-oYgTV2pBsAokqX5/gVkYwuGZJfg=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/globals/-/globals-12.4.0.tgz
   /graceful-fs/4.2.4:
     dev: true
     resolution:
@@ -875,12 +925,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/has-flag/-/has-flag-3.0.0.tgz
   /has-flag/4.0.0:
     dev: true
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
+      integrity: sha1-lEdx/ZyByBJlxNaUGGDaBrtZR5s=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/has-flag/-/has-flag-4.0.0.tgz
   /has-symbols/1.0.1:
     dev: true
     engines:
@@ -921,7 +973,8 @@ packages:
     engines:
       node: '>= 4'
     resolution:
-      integrity: sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
+      integrity: sha1-dQ49tYYgh7RzfrrIIH/9HvJ7Jfw=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/ignore/-/ignore-4.0.6.tgz
   /ignore/5.1.8:
     dev: true
     engines:
@@ -936,13 +989,15 @@ packages:
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==
+      integrity: sha1-NxYsJfy566oublPVtNiM4X2eDCs=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/import-fresh/-/import-fresh-3.3.0.tgz
   /imurmurhash/0.1.4:
     dev: true
     engines:
       node: '>=0.8.19'
     resolution:
       integrity: sha1-khi5srkoojixPcT7a21XbyMUU+o=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/imurmurhash/-/imurmurhash-0.1.4.tgz
   /inflight/1.0.6:
     dependencies:
       once: 1.4.0
@@ -987,6 +1042,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-qIwCU1eR8C7TfHahueqXc8gz+MI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/is-extglob/-/is-extglob-2.1.1.tgz
   /is-fullwidth-code-point/1.0.0:
     dependencies:
       number-is-nan: 1.0.1
@@ -1000,7 +1056,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
+      integrity: sha1-8Rb4Bk/pCz94RKOJl8C3UFEmnx0=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz
   /is-glob/4.0.1:
     dependencies:
       is-extglob: 2.1.1
@@ -1008,7 +1065,8 @@ packages:
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha512-5G0tKtBTFImOqDnLB2hG6Bp2qcKEFduo4tZu9MT/H6NQv/ghhy30o55ufafxJ/LdH79LLs2Kfrn85TLKyA7BUg==
+      integrity: sha1-dWfb6fL14kZ7x3q4PEopSCQHpdw=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/is-glob/-/is-glob-4.0.1.tgz
   /is-negative-zero/2.0.1:
     dev: true
     engines:
@@ -1044,10 +1102,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/isexe/-/isexe-2.0.0.tgz
   /js-tokens/4.0.0:
     dev: true
     resolution:
-      integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
+      integrity: sha1-GSA/tZmR35jjoocFDUZHzerzJJk=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/js-tokens/-/js-tokens-4.0.0.tgz
   /js-yaml/3.14.1:
     dependencies:
       argparse: 1.0.10
@@ -1055,19 +1115,23 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==
+      integrity: sha1-2ugS/bOCX6MGYJqHFzg8UMNqBTc=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/js-yaml/-/js-yaml-3.14.1.tgz
   /json-schema-traverse/0.4.1:
     dev: true
     resolution:
-      integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==
+      integrity: sha1-afaofZUTq4u4/mO9sJecRI5oRmA=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz
   /json-schema-traverse/1.0.0:
     dev: true
     resolution:
-      integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==
+      integrity: sha1-rnvLNlard6c7pcSb9lTzjmtoYOI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz
   /json-stable-stringify-without-jsonify/1.0.1:
     dev: true
     resolution:
       integrity: sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz
   /json5/1.0.1:
     dependencies:
       minimist: 1.2.5
@@ -1080,7 +1144,8 @@ packages:
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
+      integrity: sha1-p5yezIbuHOP6YgbRIWxQHxR/wH4=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/kleur/-/kleur-3.0.3.tgz
   /levn/0.4.1:
     dependencies:
       prelude-ls: 1.2.1
@@ -1089,7 +1154,8 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==
+      integrity: sha1-rkViwAdHO5MqYgDUAyaN0v/8at4=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/levn/-/levn-0.4.1.tgz
   /load-json-file/2.0.0:
     dependencies:
       graceful-fs: 4.2.4
@@ -1106,7 +1172,8 @@ packages:
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-XfegD5pyTAfb+GY6chk283Ox5z8WexG56OvM06RWLpAc/UHozO8X6xAxEkIitZOtsSMM1Yr3DkHgW5W+onLhCw==
+      integrity: sha1-4AfHa6LKg9WHe6GhJfyN/iO6R5g=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/local-access/-/local-access-1.1.0.tgz
   /locate-path/2.0.0:
     dependencies:
       p-locate: 2.0.0
@@ -1119,7 +1186,8 @@ packages:
   /lodash/4.17.20:
     dev: true
     resolution:
-      integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+      integrity: sha1-tEqbYpe8tpjxxRo1RaKzs2jVnFI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/lodash/-/lodash-4.17.20.tgz
   /lru-cache/6.0.0:
     dependencies:
       yallist: 4.0.0
@@ -1127,14 +1195,16 @@ packages:
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
+      integrity: sha1-bW/mVw69lqr5D8rR2vo7JWbbOpQ=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/lru-cache/-/lru-cache-6.0.0.tgz
   /mime/2.5.0:
     dev: false
     engines:
       node: '>=4.0.0'
     hasBin: true
     resolution:
-      integrity: sha512-ft3WayFSFUVBuJj7BMLKAQcSlItKtfjsKDDsii3rqFDAZ7t11zRe8ASw/GlmivGwVUYtwkQrxiGGpL6gFvB0ag==
+      integrity: sha1-K0r5NEAXeYBu6YAmu0Lowa4YdrE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/mime/-/mime-2.5.0.tgz
   /mimic-response/2.1.0:
     dev: false
     engines:
@@ -1174,7 +1244,8 @@ packages:
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-oi1b3MfbyGa7FJMP9GmLTttni5JoICpYBRlq+x5V16fZbLsnL9N3wFqqIm/nIG43FjUFkFh9Epzp/kzUGUnJxQ==
+      integrity: sha1-SZUuEETbIdv5D2zZK8nJp3fUFaY=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/mri/-/mri-1.1.6.tgz
   /ms/2.0.0:
     dev: true
     resolution:
@@ -1182,7 +1253,8 @@ packages:
   /ms/2.1.2:
     dev: true
     resolution:
-      integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+      integrity: sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/ms/-/ms-2.1.2.tgz
   /ms/2.1.3:
     dev: false
     resolution:
@@ -1195,6 +1267,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/natural-compare/-/natural-compare-1.4.0.tgz
   /needle/2.6.0:
     dependencies:
       debug: 3.2.7
@@ -1333,7 +1406,8 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-74RlY5FCnhq4jRxVUPKDaRwrVNXMqsGsiW6AJw4XK8hmtm10wC0ypZBLw5IIp85NZMr91+qd1RvvENwg7jjRFw==
+      integrity: sha1-TyNqY3Pa4FZqbUPhMmZ09QwpFJk=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/optionator/-/optionator-0.9.1.tgz
   /os-homedir/1.0.2:
     dev: false
     engines:
@@ -1382,7 +1456,8 @@ packages:
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==
+      integrity: sha1-aR0nCeeMefrjoVZiJFLQB2LKqqI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/parent-module/-/parent-module-1.0.1.tgz
   /parse-json/2.2.0:
     dependencies:
       error-ex: 1.3.2
@@ -1407,7 +1482,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
+      integrity: sha1-WB9q3mWMu6ZaDTOA3ndTKVBU83U=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/path-key/-/path-key-3.1.1.tgz
   /path-parse/1.0.6:
     resolution:
       integrity: sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
@@ -1438,7 +1514,8 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
+      integrity: sha1-3rxkidem5rDnYRiIzsiAM30xY5Y=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/prelude-ls/-/prelude-ls-1.2.1.tgz
   /process-nextick-args/2.0.1:
     dev: false
     resolution:
@@ -1448,13 +1525,15 @@ packages:
     engines:
       node: '>=0.4.0'
     resolution:
-      integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
+      integrity: sha1-foz42PW48jnBvGi+tOt4Vn1XLvg=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/progress/-/progress-2.0.3.tgz
   /punycode/2.1.1:
     dev: true
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+      integrity: sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/punycode/-/punycode-2.1.1.tgz
   /rc/1.2.8:
     dependencies:
       deep-extend: 0.6.0
@@ -1507,13 +1586,15 @@ packages:
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
+      integrity: sha1-iaf92TgmEmcxjq/hT5wy5ZjDaQk=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/require-from-string/-/require-from-string-2.0.2.tgz
   /resolve-from/4.0.0:
     dev: true
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==
+      integrity: sha1-SrzYUq0y3Xuqv+m0DgCjbbXzkuY=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/resolve-from/-/resolve-from-4.0.0.tgz
   /resolve/1.19.0:
     dependencies:
       is-core-module: 2.2.0
@@ -1533,7 +1614,8 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
+      integrity: sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/rimraf/-/rimraf-3.0.2.tgz
   /rw/1.3.3:
     dev: false
     resolution:
@@ -1545,7 +1627,8 @@ packages:
     engines:
       node: '>= 6'
     resolution:
-      integrity: sha512-y5yauMD93rX840MwUJr7C1ysLFBgMspsdTo4UVrDg3fXDvtwOyIqykhVAAm6fk/3au77773itJStObgK+LKaiA==
+      integrity: sha1-6mgeDGXSSNIJXJBXjAPKC7G1RpE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/sade/-/sade-1.7.4.tgz
   /safe-buffer/5.1.2:
     dev: false
     resolution:
@@ -1567,7 +1650,8 @@ packages:
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-QNI2ChmuioGC1/xjyYwyZYADILWyW6AmS1UH6gDj/SFUUUS4MBAWs/7mxnkRPc/F4iHezDP+O8t0dO8WHiEOdg==
+      integrity: sha1-nJf7AsIcfOT88bc+LHokMkvd3V8=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/semiver/-/semiver-1.1.0.tgz
   /semver/5.7.1:
     hasBin: true
     resolution:
@@ -1585,7 +1669,8 @@ packages:
       node: '>=10'
     hasBin: true
     resolution:
-      integrity: sha512-tCfb2WLjqFAtXn4KEdxIhalnRtoKFN7nAwj0B3ZXCbQloV2tq5eDbcTmT68JJD3nRJq24/XgxtQKFIpQdtvmVw==
+      integrity: sha1-J6qn0uTKdkUvmNOt0JOnLJQ+3Jc=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/semver/-/semver-7.3.4.tgz
   /set-blocking/2.0.0:
     dev: false
     resolution:
@@ -1597,13 +1682,15 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==
+      integrity: sha1-zNCvT4g1+9wmW4JGGq8MNmY/NOo=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/shebang-command/-/shebang-command-2.0.0.tgz
   /shebang-regex/3.0.0:
     dev: true
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+      integrity: sha1-rhbxZE2HPsrYQ7AwexQzYtTEIXI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/shebang-regex/-/shebang-regex-3.0.0.tgz
   /signal-exit/3.0.3:
     dev: false
     resolution:
@@ -1620,7 +1707,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bCR6cP+aTdScaQCnQKbPKtJOKDp/hj9EDLJo3Nw4y1QksqaovlW/bnptB6/c1e+qmNIDHRK+oXFDdEqBT8WzUA==
-  /sirv-cli/1.0.10:
+  /sirv-cli/1.0.11:
     dependencies:
       console-clear: 1.1.1
       get-port: 3.2.0
@@ -1628,15 +1715,16 @@ packages:
       local-access: 1.1.0
       sade: 1.7.4
       semiver: 1.1.0
-      sirv: 1.0.10
+      sirv: 1.0.11
       tinydate: 1.3.0
     dev: false
     engines:
       node: '>= 10'
     hasBin: true
     resolution:
-      integrity: sha512-8mLTRkvzpZXMyUZJ1whf84YHN/mm2r2+j5sU1ZYr5n2jA8VkFItNPk53oysOo+0QxBVp9aUjggkAsQp1d7L3OQ==
-  /sirv/1.0.10:
+      integrity: sha1-o/S+1Tt8CTBu1/Fuvqbh575nbHQ=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/sirv-cli/-/sirv-cli-1.0.11.tgz
+  /sirv/1.0.11:
     dependencies:
       '@polka/url': 1.0.0-next.11
       mime: 2.5.0
@@ -1645,7 +1733,8 @@ packages:
     engines:
       node: '>= 10'
     resolution:
-      integrity: sha512-H5EZCoZaggEUQy8ocKsF7WAToGuZhjJlLvM3XOef46CbdIgbNeQ1p32N1PCuCjkVYwrAVOSMacN6CXXgIzuspg==
+      integrity: sha1-gcGaKSAgSFB9bsDYuokQ/aUutaQ=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/sirv/-/sirv-1.0.11.tgz
   /slice-ansi/4.0.0:
     dependencies:
       ansi-styles: 4.3.0
@@ -1655,7 +1744,8 @@ packages:
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-qMCMfhY040cVHT43K9BFygqYbUPFZKHOg7K73mtTWJRb8pyP3fzf4Ixd5SzdEJQ6MRUg/WBnOLxghZtKKurENQ==
+      integrity: sha1-UA6N0P1VsFgVCGJVsxla3ypF/ms=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/slice-ansi/-/slice-ansi-4.0.0.tgz
   /spdx-correct/3.1.1:
     dependencies:
       spdx-expression-parse: 3.0.1
@@ -1682,6 +1772,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/sprintf-js/-/sprintf-js-1.0.3.tgz
   /string-width/1.0.2:
     dependencies:
       code-point-at: 1.1.0
@@ -1701,7 +1792,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-zUz5JD+tgqtuDjMhwIg5uFVV3dtqZ9yQJlZVfq4I01/K5Paj5UHj7VyrQOJvzawSVlKpObApbfD0Ed6yJc+1eg==
+      integrity: sha1-lSGCxGzHssMT0VluYjmSvRY7crU=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/string-width/-/string-width-4.2.0.tgz
   /string.prototype.trimend/1.0.3:
     dependencies:
       call-bind: 1.0.2
@@ -1737,7 +1829,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
+      integrity: sha1-CxVx3XZpzNTz4G4U7x7tJiJa5TI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/strip-ansi/-/strip-ansi-6.0.0.tgz
   /strip-bom/3.0.0:
     dev: true
     engines:
@@ -1755,7 +1848,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+      integrity: sha1-MfEoGzgyYwQ0gxwxDAHMzajL4AY=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/strip-json-comments/-/strip-json-comments-3.1.1.tgz
   /supports-color/5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -1763,7 +1857,8 @@ packages:
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
+      integrity: sha1-4uaaRKyHcveKHsCzW2id9lMO/I8=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/supports-color/-/supports-color-5.5.0.tgz
   /supports-color/7.2.0:
     dependencies:
       has-flag: 4.0.0
@@ -1771,7 +1866,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
+      integrity: sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/supports-color/-/supports-color-7.2.0.tgz
   /table/6.0.7:
     dependencies:
       ajv: 7.0.3
@@ -1782,7 +1878,8 @@ packages:
     engines:
       node: '>=10.0.0'
     resolution:
-      integrity: sha512-rxZevLGTUzWna/qBLObOe16kB2RTnnbhciwgPbMMlazz1yZGVEgnZK762xyVdVznhqxrfCeBMmMkgOOaPwjH7g==
+      integrity: sha1-5FiX/7zBvPnoqHv0IPLJ5aelKjQ=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/table/-/table-6.0.7.tgz
   /tar/4.4.13:
     dependencies:
       chownr: 1.1.4
@@ -1801,12 +1898,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/text-table/-/text-table-0.2.0.tgz
   /tinydate/1.3.0:
     dev: false
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-7cR8rLy2QhYHpsBDBVYnnWXm8uRTr38RoZakFSW7Bs7PzfMPNZthuMLkwqZv7MTu8lhQ91cOFYS5a7iFj2oR3w==
+      integrity: sha1-5sqOWiK1G7TqHDoqT9E1Lb1MV/s=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/tinydate/-/tinydate-1.3.0.tgz
   /topojson-client/3.1.0:
     dependencies:
       commander: 2.20.3
@@ -1819,7 +1918,8 @@ packages:
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==
+      integrity: sha1-pNZaPlRlF3AePlw3pHpwrJf+Vt8=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/totalist/-/totalist-1.1.0.tgz
   /tsconfig-paths/3.9.0:
     dependencies:
       '@types/json5': 0.0.29
@@ -1836,19 +1936,22 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==
+      integrity: sha1-B7ggO/pwVsBlcFDjzNLDdzC6uPE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/type-check/-/type-check-0.4.0.tgz
   /type-fest/0.8.1:
     dev: true
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
+      integrity: sha1-CeJJ696FHTseSNJ8EFREZn8XuD0=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/type-fest/-/type-fest-0.8.1.tgz
   /uri-js/4.4.1:
     dependencies:
       punycode: 2.1.1
     dev: true
     resolution:
-      integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
+      integrity: sha1-mxpSWVIlhZ5V9mnZKPiMbFfyp34=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/uri-js/-/uri-js-4.4.1.tgz
   /util-deprecate/1.0.2:
     dev: false
     resolution:
@@ -1856,7 +1959,8 @@ packages:
   /v8-compile-cache/2.2.0:
     dev: true
     resolution:
-      integrity: sha512-gTpR5XQNKFwOd4clxfnhaqvfqMpqEwr4tOtCyz4MtYZX2JYhfr1JvBFKdS+7K/9rfpZR3VLX+YWBbKoxCgS43Q==
+      integrity: sha1-lHHvo++RKNL3xqfKOcTda1BVsTI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/v8-compile-cache/-/v8-compile-cache-2.2.0.tgz
   /validate-npm-package-license/3.0.4:
     dependencies:
       spdx-correct: 3.1.1
@@ -2152,7 +2256,8 @@ packages:
       node: '>= 8'
     hasBin: true
     resolution:
-      integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
+      integrity: sha1-fGqN0KY2oDJ+ELWckobu6T8/UbE=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/which/-/which-2.0.2.tgz
   /wide-align/1.1.3:
     dependencies:
       string-width: 1.0.2
@@ -2164,7 +2269,8 @@ packages:
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==
+      integrity: sha1-YQY29rH3A4kb00dxzLF/uTtHB5w=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/word-wrap/-/word-wrap-1.2.3.tgz
   /wrappy/1.0.2:
     resolution:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
@@ -2175,15 +2281,16 @@ packages:
   /yallist/4.0.0:
     dev: true
     resolution:
-      integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
+      integrity: sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=
+      tarball: http://artifactory.opentext.net:80/artifactory/api/npm/NPM_ORG/yallist/-/yallist-4.0.0.tgz
 specifiers:
   canvas: ~2.6.1
-  eslint: ~7.18.0
+  eslint: ~7.20.0
   eslint-config-standard: ~16.0.2
   eslint-plugin-import: ~2.22.1
   eslint-plugin-node: ~11.1.0
-  eslint-plugin-promise: ~4.2.1
+  eslint-plugin-promise: ~4.3.1
   eslint-plugin-standard: ~4.1.0
   node-fetch: ~2.6.1
-  sirv-cli: ^1.0.10
+  sirv-cli: ~1.0.11
   vega: ~5.19.1

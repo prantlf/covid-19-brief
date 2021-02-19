@@ -64,7 +64,9 @@ async function getAllData () {
 function prepareData (allData, hospData) {
   console.log(`processing ${allData.length} entries`)
   const countryMap = new Map()
+  const aggregatedData = aggregateData()
   const weeks = extractWeeks()
+  console.log(`Weeks: ${weeks}`)
   const data = extractStatistics()
   const max = computeMax()
   const countries = Object
@@ -73,9 +75,50 @@ function prepareData (allData, hospData) {
   console.log(`prepared ${countries} countries with ${weeks.length} weeks`)
   return { weeks, data, max }
 
+  // convert to the original schema of the data
+  // { day, month, year, cases, deaths, ... } => { year_week, cases_weekly, deaths_weekly, ... }
+  function aggregateData () {
+    if (allData[0].year_week) return allData
+    const aggregatedMap = new Map()
+    for (const entry of allData) {
+      const { countriesAndTerritories, continentExp, popData2019, cases, deaths } = entry
+      const year_week = computeWeek(entry)
+      const key = `${countriesAndTerritories}:${year_week}`
+      let aggregatedEntry = aggregatedMap.get(key)
+      if (!aggregatedEntry) {
+        aggregatedEntry = {
+          countriesAndTerritories,
+          continentExp,
+          popData2019,
+          year_week,
+          cases_weekly: 0,
+          deaths_weekly: 0
+        }
+        aggregatedMap.set(key, aggregatedEntry)
+      }
+      if (!aggregatedEntry.popData2019) aggregatedEntry.popData2019 = popData2019
+      aggregatedEntry.cases_weekly += cases
+      aggregatedEntry.deaths_weekly += deaths
+    }
+    console.log(`aggregated ${aggregatedMap.size} entries`)
+    return Array.from(aggregatedMap.values())
+
+    function pad (value) {
+      return value < 10 ? `0${value}` : value
+    }
+
+    function computeWeek ({ day, month, year }) {
+      const date = new Date(year, month - 1, day)
+      const start = new Date(date.getFullYear(), 0, 1)
+      const dayCount = Math.floor((date - start) / (24 * 60 * 60 * 1000))
+      const weekNum = Math.ceil((date.getDay() + dayCount + 1) / 7)
+      return `${year}-${pad(weekNum)}`
+    }
+  }
+
   // ['2020-01', ...]
   function extractWeeks () {
-    return allData
+    return aggregatedData
       .filter(({ countriesAndTerritories: country }) => country === 'Czechia')
       .map(({ year_week }) => year_week)
       .sort()
@@ -92,7 +135,7 @@ function prepareData (allData, hospData) {
   //   ...
   // }
   function extractStatistics () {
-    const prepData = allData
+    const prepData = aggregatedData
       .filter(({ continentExp }) => continentExp !== 'Other')
       .sort(byWeekAscending)
       .reduce((prepData, {
@@ -120,19 +163,24 @@ function prepareData (allData, hospData) {
       'Daily hospital occupancy': 'hosp',
       'Daily ICU occupancy': 'icu'
     }
+    const skippedWeeks = new Set()
     hospData
       .filter(({ indicator }) => indicator in types)
       .sort(byWeekAscending)
       .forEach(({ country, indicator, year_week: week, value }) => {
         const countryData = countryMap.get(country)
-        if (!countryData) throw new Error(`Unknown country ${country}`)
+        if (!countryData) {
+          console.log(`Known countries: ${countryMap.keys()}`)
+          throw new Error(`Unknown country ${country}`)
+        }
         const index = weeks.indexOf(week.replace('W', ''))
-        if (index < 0) throw new Error(`Unknown week ${week}`)
+        if (index < 0) return skippedWeeks.add(week)
         const { abs, rel, people } = countryData
         const type = types[indicator]
         ensureValues(abs, type)[index] = value
         ensureValues(rel, type)[index] = makeRelative(value, people)
       })
+    if (skippedWeeks.size > 0) console.warn(`skipped unknown weeks ${Array.from(skippedWeeks)}`)
 
     return prepData
 
