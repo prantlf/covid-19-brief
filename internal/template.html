@@ -72,13 +72,18 @@
       <option value=deaths>New deaths</option>
       <option value=hosp>Hospital occupancy</option>
       <option value=icu>ICU beds occupancy</option>
-    </select> in <select id=continent aria-label=continent></select> per week from January 2020
+    </select> in <select id=continent aria-label=continent></select> per week
     <select id=unit aria-label="relative or absolute">
       <option value=rel>relatively to citizens (&permil;)</option>
       <option value=abs>in absolute numbers</option>
+    </select> ordered by
+    <select id=order aria-label="order of the images">
+      <option value=name>country name</option>
+      <option value=maximum>maximum count</option>
+      <option value=latest>latest count</option>
     </select>.
     Numbers below country names are maximum and latest values.
-    The last week is <span id=last-week></span>.
+    Weeks span from 2020-01 to <span id=last-week></span>.
     Today is <span id=today></span>.</p>
     <div id=images class=hidden></div>
   </main>
@@ -96,9 +101,12 @@
     const lastWeek = ''
     const { body } = document
     const container = document.getElementById('images')
-    const [, continentName, typeName, unitName] =
-      /#([^,]+),([^,]+),([^,]+)/.exec(location.hash)
-      || ['', 'Europe', 'cases', 'rel']
+    let [, continentName, typeName, unitName, orderBy] =
+      /#([^,]+),([^,]+),([^,]+),([^,]+)/.exec(location.hash) || []
+    if (!continentName) continentName = 'Europe'
+    if (!typeName) typeName = 'cases'
+    if (!unitName) unitName = 'rel'
+    if (!orderBy) orderBy = 'name'
 
     const type = document.getElementById('type')
     type.value = typeName
@@ -108,6 +116,10 @@
     unit.value = unitName
     unit.addEventListener('change', updateImages)
 
+    const order = document.getElementById('order')
+    order.value = orderBy
+    order.addEventListener('change', updateImages)
+
     const continent = document.getElementById('continent')
     fillContinents()
     continent.value = continentName
@@ -115,7 +127,7 @@
 
     document.getElementById('last-week').textContent = lastWeek
     document.getElementById('today').textContent = new Date().toLocaleDateString()
-    createImages(continentName, typeName, unitName)
+    createImages(continentName, typeName, unitName, orderBy)
 
     function fillContinents () {
       continent.innerHTML = Object
@@ -139,10 +151,11 @@
       const continentName = continent.value
       const typeName = type.value
       const unitName = unit.value
-      location.hash = `#${continentName},${typeName},${unitName}`
+      const orderBy = order.value
+      location.hash = `#${continentName},${typeName},${unitName},${orderBy}`
       hideImages()
       deleteImages()
-      createImages(continentName, typeName, unitName)
+      createImages(continentName, typeName, unitName, orderBy)
     }
 
     function deleteImages () {
@@ -152,10 +165,33 @@
       }
     }
 
-    async function createImages (continent, type, unit) {
+    function getSortMethod (continent, type, unit, order) {
+      switch (order) {
+        case 'name':
+          return (left, right) => left < right ? -1 : left > right ? 1 : 0
+        case 'maximum':
+          return (left, right) => {
+            ([left] = max[continent][left][unit][type] || []);
+            ([right] = max[continent][right][unit][type] || []);
+            if (!left) left = 0
+            if (!right) right = 0
+            return left < right ? 1 : left > right ? -1 : 0
+          }
+        case 'latest':
+          return (left, right) => {
+            ([, left] = max[continent][left][unit][type] || []);
+            ([, right] = max[continent][right][unit][type] || []);
+            if (!left) left = 0
+            if (!right) right = 0
+            return left < right ? 1 : left > right ? -1 : 0
+          }
+      }
+    }
+
+    async function createImages (continent, type, unit, order) {
       await Promise.all(Object
         .keys(max[continent])
-        .sort()
+        .sort(getSortMethod(continent, type, unit, order))
         .map(country => {
           const image = createImage(continent, country, type, unit)
           const promise = waitForImage(image)

@@ -1,5 +1,9 @@
 # Changes
 
+## 1.2.0
+
+* Add an option to sort images by name, maximum and latest indicators.
+
 ## 1.1.3
 
 * Change the source file to another one, which contains almost the same information as the original one did the last week. Changes in the original file made it so big that it needs more than two minutes to download.
