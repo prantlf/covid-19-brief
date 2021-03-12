@@ -29,13 +29,13 @@
     "test": "eslint *.js internal/*.js"
   },
   "dependencies": {
-    "canvas": "~2.6.1",
+    "canvas": "~2.7.0",
     "node-fetch": "~2.6.1",
     "sirv-cli": "~1.0.11",
     "vega": "~5.19.1"
   },
   "devDependencies": {
-    "eslint": "~7.20.0",
+    "eslint": "~7.21.0",
     "eslint-config-standard": "~16.0.2",
     "eslint-plugin-import": "~2.22.1",
     "eslint-plugin-node": "~11.1.0",

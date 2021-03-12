@@ -1,5 +1,9 @@
 # Changes
 
+## 1.2.1
+
+* Upgrade dependencies.
+
 ## 1.2.0
 
 * Add an option to sort images by name, maximum and latest indicators.
