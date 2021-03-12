@@ -49,7 +49,7 @@ Licensed under the MIT license.
 
 Icon made by [srip from www.flaticon.com].
 
-[on-line]: https://prantlf.github.io/covid-19-brief
+[on-line]: http://covid-19-brief.herokuapp.com/
 [ECDC]: https://opendata.ecdc.europa.eu/
 [Node.js]: https://nodejs.org/
 [Docker]: https://www.docker.com/
